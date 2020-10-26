@@ -63,7 +63,13 @@
                 "description": "Password for custom container registry"
             }
         },
-        "sftpDNS": {
+        "sftpDNSName": {
+            "type": "string",
+            "metadata": {
+                "description": "DNS for SFTP"
+            }
+        },
+        "sftpGroupName": {
             "type": "string",
             "metadata": {
                 "description": "DNS for SFTP"
@@ -72,8 +78,8 @@
     },
     "variables": {
         "sftpContainerName": "sftp",
-        "sftpContainerGroupName": "sftp-group",
-        "sftpDNSLabel": "[parameters('sftpDNS')]",
+        "sftpContainerGroupName": "[parameters('sftpGroupName')]",
+        "sftpDNSLabel": "[parameters('sftpDNSName')]",
         "sftpContainerImage": "[concat(parameters('containerRegistry'), '/sftp:latest')]",
         "sftpEnvVariable": "[concat(parameters('sftpUser'),':',parameters('sftpPassword'),':1001')]",
         "storageAccountId": "[resourceId(parameters('existingStorageAccountResourceGroupName'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName'))]"
