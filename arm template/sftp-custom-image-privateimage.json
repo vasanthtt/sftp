@@ -34,6 +34,7 @@
         },
         "sftpPassword": {
             "type": "string",
+            "defaultValue": "",
             "metadata": {
                 "description": "Password to use for SFTP access"
             }

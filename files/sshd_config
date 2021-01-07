@@ -20,3 +20,10 @@ ChrootDirectory %h
 
 # Enable this for more logs
 #LogLevel VERBOSE
+
+
+#MaxSessions 10
+MaxSessions 500
+
+#MaxStartups 10:30:100
+MaxStartups 50:10:500
